@@ -9,11 +9,11 @@ import java.util.Scanner;
 public class Order
 {
     public boolean bang1;
-    int run1 = 0;
-    int run2 = 0;
-    int run3 = 0;
-    int run4 = 0;
-    int run5 = 0;
+    int run1;
+    int run2;
+    int run3;
+    int run4;
+    int run5;
     public  int run [] = {run1, run2, run3, run4, run5};
 
     Car car1 = new Car("GAZ-3302", 1500, "AX3254KO", 45000, false);
