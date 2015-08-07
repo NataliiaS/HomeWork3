@@ -6,12 +6,14 @@ public class Car
     public String brand;
     public int capacity;
     public String reg; //license plate
+    int mileage;
     public boolean needRepair;
 
-    Car (String brand, int capacity, String reg, boolean needRepair){
+    Car (String brand, int capacity, String reg, int mileage, boolean needRepair){
         this.brand = brand;
         this.capacity = capacity;
         this.reg = reg;
+        this.mileage = mileage;
         this.needRepair = needRepair;
     }
     public String getBrand(){
@@ -23,6 +25,7 @@ public class Car
     public String getReg(){
         return reg;
     }
+
 
     @Override
     public String toString()
