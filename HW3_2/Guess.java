@@ -11,63 +11,31 @@ public class Guess
 
     public void guess()
     {
-
-        System.out.println("Игра \"Угадай число\"");
-        while (win == false)
-        {
-
-            System.out.println("Введите число от 1 до 100: ");
-
-            int number = s.nextInt();
-            numberOfTries++;
-
-            if (a == number)
+            System.out.println("Game \"Guess a number\"");
+            System.out.println("Enter the number from 1 to 100: ");
+            while (win == false)
             {
-                win = true;
-            } else if ((Math.abs(a - number)) > 50)
-            {
+                int number = s.nextInt();
+                numberOfTries++;
 
-                if ((a - number) > 0)
+                if (a == number)
                 {
-                    System.out.println("Загаданное число намного больше!");
+                    win = true;
                 } else
                 {
-                    System.out.println("Загаданное число намного меньше!");
-                }
-            } else if ((Math.abs(a - number)) > 30)
-            {
-                if ((a - number) > 0)
-                {
-                    System.out.println("Загаданное число значительно больше!");
-                } else
-                {
-                    System.out.println("Загаданное число значительно меньше!");
-                }
-            } else if ((Math.abs(a - number)) > 10)
-            {
-                if ((a - number) > 0)
-                {
-                    System.out.println("Загаданное число немного больше!");
-                } else
-                {
-                    System.out.println("Загаданное число немного меньше!");
-                }
-            } else if ((Math.abs(a - number)) >= 1)
-            {
-                if ((a - number) > 0)
-                {
-                    System.out.println("Загаданное число совсем чуть-чуть больше!");
-                } else
-                {
-                    System.out.println("Загаданное число совсем чуть-чуть меньше!");
+                    if (a < number)
+                    {
+                        System.out.println("Too high. Guess again.");
+                    } else
+                    {
+                        System.out.println("Too low. Guess again.");
+                    }
                 }
             }
+            System.out.println("Congratulations! You guessed the number!!!");
+            System.out.println("Unknown number was: " + a);
+            System.out.println("The number of attempts: " + numberOfTries);
         }
-        System.out.println("Поздравляю! Вы угадали число!!!");
-        System.out.println("Было загадано число: " + a);
-        System.out.println("Количество попыток: " + numberOfTries);
-
-    }
 
     public static void main(String[] args)
     {
