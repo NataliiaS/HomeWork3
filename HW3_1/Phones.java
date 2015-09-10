@@ -2,6 +2,7 @@ package sourseit.HomeWork.Sydorenko.HomeWork3.HW3_1;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Scanner;
 
 public class Phones
 {
@@ -15,16 +16,19 @@ public class Phones
     Phones()
     {
         localCalls();
-        cityCalls();
+        longDistanceCalls();
         sort();
     }
 
     private void localCalls()
     {
-        System.out.println("Callers which time local calls are more than an hour:");
+        System.out.println("Enter the time in min of exceeding local calls: ");
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        System.out.println("Callers which time local calls are more than " + a + " min:");
         for (int i = 0; i < phone.length; i++)
         {
-            if (phone[i].tcc > 60)
+            if (phone[i].tcc > a)
             {
                 System.out.println(phone[i]);
             }
@@ -32,7 +36,7 @@ public class Phones
     }
 
 
-    private void cityCalls()
+    private void longDistanceCalls()
     {
         System.out.println();
         System.out.println("Callers which have long-distance calls:");
